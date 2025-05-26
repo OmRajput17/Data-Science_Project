@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s')
 
 project_name = "datacience"
-
+## Defining the structue of the Projects - Files and Folders
 list_of_files = [
     ".gthub/workflows/.gitkeep",
     f"src/{project_name}/__init__.py",
