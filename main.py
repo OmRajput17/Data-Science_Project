@@ -2,7 +2,7 @@ from src.datacience import logger
 from src.datacience.pipeline.data_ingestion import DataIngestionTrainingPipeline
 from src.datacience.pipeline.data_validation import DataValidationTrainingPipeline
 
-
+## Data Ingestion Stage
 STAGE_NAME = "Data Ingestion Stage"
 
 try:
@@ -15,7 +15,7 @@ except Exception as e:
     logger.exception(e)
     raise e
 
-
+## Data Validation Stage
 STAGE_NAME = "Data Validation Stage"
 
 try:
