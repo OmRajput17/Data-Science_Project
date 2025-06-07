@@ -1,6 +1,6 @@
 from src.datacience.constants import *
-from src.datacience.utils.common import read_yaml, create_directories
-from src.datacience.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig)
+from src.datacience.utils.common import read_yaml, create_directories,save_json
+from src.datacience.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig,ModelEvaluationConfig)
 
 class ConfigurationManager:
     def __init__(self,
@@ -71,3 +71,22 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluator
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_evaluator_config = ModelEvaluationConfig(
+            root_dir = config.root_dir,
+            test_data_path = config.test_data_path,
+            model_path = config.model_path,
+            metric_file_name = config.metric_file_name,
+            all_params = params,
+            target_column = schema.name,
+            mlflow_uri = "https://dagshub.com/forcoding247/Data-Science_Project.mlflow"
+        )
+
+        return model_evaluator_config
