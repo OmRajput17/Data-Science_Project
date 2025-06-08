@@ -10,10 +10,10 @@ import joblib
 from src.datacience.entity.config_entity import (ModelEvaluationConfig)
 from src.datacience.utils.common import save_json
 
-# import os
-# os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/forcoding247/Data-Science_Project.mlflow"
-# os.environ['MLFLOW_TRACKING_USERNAME'] = 'forcoding247'
-# os.environ['MLFLOW_TRACKING_PASSWORD'] = "f8a0e72116c9a3692360c53afb2c4baaed03b176"
+import os
+os.environ["MLFLOW_TRACKING_URI"] = "YOUR TRACKING URI"
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'YOUR DAGSHUB USERNAME'
+os.environ['MLFLOW_TRACKING_PASSWORD'] = "YOUR DAGSHUB TOKEN"
 
 
 class ModelEvaluator:
